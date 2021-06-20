@@ -12,6 +12,9 @@ class Coupon(ABC):
         self.count = count
         self.expires = expires
 
+    def __repr__(self):
+        return f"{self.coupon_type, self.count, self.expires}"
+
 
 class GlobalCoupon(Coupon):
     def __init__(self, coupon_type: CouponType, count, expires):
