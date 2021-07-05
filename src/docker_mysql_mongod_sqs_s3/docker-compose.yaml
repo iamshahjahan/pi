@@ -3,18 +3,18 @@ version: '3.7'
 services:
   mongodb:
     image: mongo:latest
-    container_name: mongodb
+    container_name: my-mongodb
     restart: always
     environment:
-      MONGO_INITDB_DATABASE: products_global
+      MONGO_INITDB_DATABASE: products
     ports:
-      - 27017:27017
+      - 27018:27017
   localstack:
     image: localstack/localstack
     environment:
       - SERVICES=s3,aws
     ports:
-      - "4566:4566"
+      - "4569:4566"
     volumes:
       - ./docker/aws:/docker-entrypoint-initaws.d
 
@@ -27,8 +27,8 @@ services:
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - '3307:3306'
+      - '3308:3306'
     expose:
-      - '3307'
+      - '3308'
     volumes:
       - ./docker/sql:/docker-entrypoint-initaws.d
