@@ -65,4 +65,22 @@ Working on different projects.
             publisher: [book_ids],
         }
 
-    
+5. Parking lot design
+   
+    -- a vehicle enters from one of the entry gates
+   
+    -- parking attendant generates a ticket for the vehicle
+   
+    -- vehicle gets parked at a location
+   
+    -- vehicle comes to one of the exit gate.
+   
+    -- payment happens and parking spot gets vacated.
+   
+    ![Parking diagram](./src/parkinglot/parkinglot.png?raw=true "Title")
+   
+6. docker images:
+
+    login to mysql:
+   
+        mysql -h localhost -P 3308 --protocol=tcp -u user -ppassword
