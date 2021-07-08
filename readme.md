@@ -84,3 +84,6 @@ Working on different projects.
     login to mysql:
    
         mysql -h localhost -P 3308 --protocol=tcp -u user -ppassword
+
+        Remove a file from git: git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch  src/docker_mysql_mongod_sqs_s3/docker/provision/mysql/init/01-databases.sql'  --prune-empty --tag-name-filter cat -- --all
+
