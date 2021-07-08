@@ -17,7 +17,8 @@ api = Api(app)
 mongo = PyMongo(app)
 db = SQLAlchemy(app)
 
-if __name__ == '__main__':
+
+def start_app():
     from docker_mysql_mongod_sqs_s3.src.user.product_resource import ProductRoute
     from docker_mysql_mongod_sqs_s3.src.model.user import User
     from docker_mysql_mongod_sqs_s3.src.user.user_routes import UserResource
@@ -27,3 +28,7 @@ if __name__ == '__main__':
     api.add_resource(UserResource, "/user")
     api.add_resource(ProductRoute, "/product")
     app.run(port=8005, debug=True)
+
+
+if __name__ == '__main__':
+    start_app()
