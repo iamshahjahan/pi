@@ -87,3 +87,50 @@ Working on different projects.
 
         Remove a file from git: git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch  src/docker_mysql_mongod_sqs_s3/docker/provision/mysql/init/01-databases.sql'  --prune-empty --tag-name-filter cat -- --all
 
+7. Design splitwise:
+    Expense management system.
+       
+    Requirements:
+   
+    1. user can create a group.
+    2. user can add bill:
+        i. split strategy:
+            a. equal
+            b. percentage
+            c. exact
+        ii. paid
+        iii. total amount
+       
+    
+    -------
+    1. User level Expense
+    2. Group level Expense
+        i. five people are there and paid by you: equally divide.
+        ii. five people are there and paid by two, should be divided equally.
+        iii. Five people are there and paid by two, one person has higher percentage.
+    
+    3. History of bills generated.
+
+    Actors:
+        1. User
+        2. Application
+    
+    Actions:
+        1. User can add a bill
+        
+            Bill:
+                i.   users involved.
+                ii.  total amount.
+                iii. expense: 
+                        users
+                        strategy
+                            i. equal
+                            ii. percentage
+                                <user, percentage>        
+                iv. payment:
+                        <user, amount>
+        
+        2. User can do the settlement
+            
+            Can happen at user level.
+            Can happen at group level.
